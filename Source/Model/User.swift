@@ -28,17 +28,17 @@ import protocol Decodable.Decodable
 import Decodable
 
 public struct User {
-    public let ID: String
+    public let ID: String?
     public let username: String
-    public let fullName: String
-    public let profilePictureURL: URL
+    public let fullName: String?
+    public let profilePictureURL: URL?
     public let bio: String?
     public let websiteURL: URL?
     public let mediaCount: Int?
     public let followingCount: Int?
     public let followersCount: Int?
     
-    public init(ID: String, username: String, fullName: String, profilePictureURL: URL, bio: String?,
+    public init(ID: String?, username: String, fullName: String?, profilePictureURL: URL?, bio: String?,
                 websiteURL: URL?, mediaCount: Int?, followingCount: Int?, followersCount: Int?) {
         self.ID = ID
         self.username = username
@@ -57,10 +57,10 @@ public struct User {
 extension User: Decodable {
     public static func decode(_ json: Any) throws -> User {
         return try User(
-            ID: json => "id",
+            ID: try? json => "id",
             username: json => "username",
-            fullName: json => "full_name",
-            profilePictureURL: json => "profile_picture",
+            fullName: try? json => "full_name",
+            profilePictureURL: try? json => "profile_picture",
             bio: try? json => "bio",
             websiteURL: try? json => "website",
             mediaCount: try? json => "counts" => "media",
