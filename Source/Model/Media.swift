@@ -75,11 +75,11 @@ public struct Media {
     }
     public final class UserTag {
         public let position: CGPoint
-        public let username: String
+        public let user: User
         
-        public init(position: CGPoint, username: String) {
+        public init(position: CGPoint, user: User) {
             self.position = position
-            self.username = username
+            self.user = user
         }
     }
     
@@ -214,7 +214,7 @@ extension Media.UserTag: Decodable {
     public static func decode(_ json: Any) throws -> Media.UserTag {
         return try Media.UserTag(
             position: json => "position",
-            username: json => "username"
+            user: json => "username"
         )
     }
 }
