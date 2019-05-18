@@ -94,14 +94,14 @@ public struct Media {
     public let url: URL
     public let likesCount: Int
     public let commentCount: Int
-    public let usersInPhoto: [UserTag]
+    public let usersInPhoto: [UserTag]?
     public let filterName: String
     public let location: Location?
     public let tags: [String]
     
     public init(ID: String, user: User, type: MediaType, images: [Media.ImageSize: MediaRendition]?, videos: [Media.VideoSize: MediaRendition]?,
                 caption: Caption?, userHasLiked: Bool, creationDate: Date, url: URL, likesCount: Int, commentCount: Int,
-                usersInPhoto: [Media.UserTag], filterName: String, location: Location?, tags: [String]) {
+                usersInPhoto: [Media.UserTag]?, filterName: String, location: Location?, tags: [String]) {
         self.ID = ID
         self.user = user
         self.type = type
@@ -166,7 +166,7 @@ extension Media: Decodable {
             url: json => "link",
             likesCount: json => "likes" => "count",
             commentCount: json => "comments" => "count",
-            usersInPhoto: json => "users_in_photo",
+            usersInPhoto: try? json => "users_in_photo",
             filterName: json => "filter",
             location: try? json => "location",
             tags: json => "tags"
