@@ -214,7 +214,7 @@ extension Media.UserTag: Decodable {
     public static func decode(_ json: Any) throws -> Media.UserTag {
         return try Media.UserTag(
             position: json => "position",
-            user: json => "user"
+            user: json => "username"
         )
     }
 }
