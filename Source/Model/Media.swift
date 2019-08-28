@@ -153,23 +153,32 @@ extension Media: Decodable {
                 }
             }
         }
-        
+        var likesCount: Int?
+        var commentsCount: Int?
+      
+        do {
+          likesCount = (try json => "likes" => "count") as? Int
+          commentsCount = (try json => "comments" => "count") as? Int
+        } catch let error {
+          print("Failed to parse \(error.localizedDescription)")
+        }
+      
         return try Media(
-            ID: json => "id",
-            user: json => "user",
-            type: json => "type",
-            images: images,
-            videos: videos,
-            caption: try? json => "caption",
-            userHasLiked: json => "user_has_liked",
-            creationDate: json => "created_time",
-            url: json => "link",
-            likesCount: json => "likes" => "count",
-            commentCount: json => "comments" => "count",
-            usersInPhoto: try? json => "users_in_photo",
-            filterName: json => "filter",
-            location: try? json => "location",
-            tags: json => "tags"
+          ID: json => "id",
+          user: json => "user",
+          type: json => "type",
+          images: images,
+          videos: videos,
+          caption: try? json => "caption",
+          userHasLiked: json => "user_has_liked",
+          creationDate: json => "created_time",
+          url: json => "link",
+          likesCount: likesCount ?? 0,
+          commentCount:  commentsCount ?? 0,
+          usersInPhoto: try? json => "users_in_photo",
+          filterName: json => "filter",
+          location: try? json => "location",
+          tags: json => "tags"
         )
     }
 }

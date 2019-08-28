@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Gramophone'
-  s.version = '1.1'
+  s.version = '1.2'
   s.summary = 'Gramophone is a swifty wrapper of the Instagram API'
   s.homepage = 'https://github.com/jverdi/Gramophone'
   s.license = { :type => "MIT", :file => "LICENSE" }
