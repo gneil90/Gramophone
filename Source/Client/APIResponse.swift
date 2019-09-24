@@ -32,7 +32,7 @@ public struct APIResponse<T> {
     public let data: T
     public let pagination: APIPagination?
     
-    public init(meta: APIMetadata? = nil, data: T, pagination: APIPagination?) {
+    public init(meta: APIMetadata? = nil, data: T, pagination: APIPagination? = nil) {
         self.meta = meta
         self.data = data
         self.pagination = pagination
