@@ -22,7 +22,7 @@ public struct APIPagination {
 
 // MARK: Decodable
 
-extension APIMetadata: Decodable {
+extension APIPagination: Decodable {
   public static func decode(_ json: Any) throws -> APIPagination {
     return APIPagination(
       nextUrl: try? json => "next_url",
