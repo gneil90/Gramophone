@@ -30,10 +30,12 @@ import Decodable
 public struct APIResponse<T> {
     public let meta: APIMetadata?
     public let data: T
+    public let pagination: APIPagination?
     
-    public init(meta: APIMetadata? = nil, data: T) {
+    public init(meta: APIMetadata? = nil, data: T, pagination: APIPagination?) {
         self.meta = meta
         self.data = data
+        self.pagination = pagination
     }
 }
 
@@ -43,7 +45,8 @@ extension APIResponse where T:Decodable {
     public static func decode(_ json: Any) throws -> APIResponse {
         return APIResponse<T> (
             meta: try? APIMetadata.decode(json => "meta"),
-            data: try T.decode(json => "data")
+            data: try T.decode(json => "data"),
+            pagination: try? APIPagination.decode(json => "pagination")
         )
     }
     

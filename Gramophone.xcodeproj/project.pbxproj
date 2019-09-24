@@ -76,6 +76,7 @@
 		13FC89C51E787F69006655FA /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC89C41E787F69006655FA /* Tag.swift */; };
 		13FC89C71E788D89006655FA /* RelationshipStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC89C61E788D89006655FA /* RelationshipStatus.swift */; };
 		13FC89C91E789410006655FA /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC89C81E789410006655FA /* Comment.swift */; };
+		68593BB2233A9F2800378A0D /* APIPagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68593BB1233A9F2800378A0D /* APIPagination.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		13FC89C41E787F69006655FA /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		13FC89C61E788D89006655FA /* RelationshipStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipStatus.swift; sourceTree = "<group>"; };
 		13FC89C81E789410006655FA /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		68593BB1233A9F2800378A0D /* APIPagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPagination.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 			children = (
 				13FC885D1E77A36D006655FA /* APIError.swift */,
 				136C71D61E8103DC007CDF63 /* APIMetadata.swift */,
+				68593BB1233A9F2800378A0D /* APIPagination.swift */,
 				134511DB1E997D3C00A4A949 /* APIResponse.swift */,
 				134511F71E9A7FB700A4A949 /* Client.swift */,
 				131570DD1E80DF6A006123F1 /* ClientConfiguration.swift */,
@@ -435,6 +438,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 13FC86CB1E747500006655FA;
@@ -509,6 +513,7 @@
 				13D45A521E85E52E00AA8888 /* OEmbed.swift in Sources */,
 				13EA5E9F1E80D6FD00086DCD /* Auth.swift in Sources */,
 				136C71CA1E80E5A1007CDF63 /* Resource.swift in Sources */,
+				68593BB2233A9F2800378A0D /* APIPagination.swift in Sources */,
 				13FC89B71E78775D006655FA /* Location.swift in Sources */,
 				13FC86FE1E7475AB006655FA /* Gramophone.swift in Sources */,
 				13EA5EA21E80D71100086DCD /* UsersAPI.swift in Sources */,
